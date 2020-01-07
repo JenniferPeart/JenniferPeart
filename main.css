@@ -1,1 +1,9 @@
+/*
+Colours:
+Tourquoise #0E969E
+*/
 
+.jumbotron {
+    background-color: #0E969E;
+    color: white;
+}
