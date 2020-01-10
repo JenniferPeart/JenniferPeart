@@ -1,9 +1,17 @@
 /*
-Colours:
-Tourquoise #0E969E
+COLOURS
+Tourquoise: #0E969E
+Pink: #E8175D
 */
+
+
+.nav-link, .navbar-brand {
+    color: #E8175D;
+}
 
 .jumbotron {
     background-color: #0E969E;
     color: white;
 }
+
+
