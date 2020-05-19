@@ -2,15 +2,44 @@
 COLOURS
 Tourquoise: #0E969E
 Pink: #E8175D
+
+dark tourquiose: #49878B 
+dark rose: #8B4D49
+very dark tourquiose: #254446
+
+circus red: #de6449
+
+duck egg blue: #689093
+light rose: #ca907e
+dark rose: #994636
+
+
+FAIRY ELEPHANT COLOURS
+#adbec7 - sky blue
+
+#e1e6e8 - pale blue
+
+#914856 - burgundy
+
+#67997e - green
+
+#5c7385 - dark blue
 */
 
+.navbar {
+    background-color: #ca907e;
+}
 
 .nav-link, .navbar-brand {
-    color: #E8175D;
+    color: white;
+}
+
+.nav-link:hover, .navbar-brand:hover {
+    color: grey;
 }
 
 .jumbotron {
-    background-color: #0E969E;
+    background-color: #689093;
     color: white;
 }
 
