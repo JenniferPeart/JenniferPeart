@@ -1,0 +1,26 @@
+body {
+    background: #ca907e url(../media/skydivewide.jpg) no-repeat right center;
+    background-size: cover;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+@media (min-width: 921px) {
+    h1 {
+        font-size: 6em;
+    }
+}
+
+.name {
+    margin: auto;
+    margin-left: 30px;
+    width: 65vw;
+    height: 70vh;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

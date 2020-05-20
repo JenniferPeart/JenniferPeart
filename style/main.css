@@ -13,34 +13,43 @@ duck egg blue: #689093
 light rose: #ca907e
 dark rose: #994636
 
-
-FAIRY ELEPHANT COLOURS
+OLD COLOURS
 #adbec7 - sky blue
-
 #e1e6e8 - pale blue
-
 #914856 - burgundy
-
 #67997e - green
-
 #5c7385 - dark blue
+
+CURRENT COLOURS USING
+light rose: #ca907e
+duck egg blue: #689093
+ 
 */
 
 .navbar {
     background-color: #ca907e;
 }
 
-.nav-link, .navbar-brand {
+.nav-link, .navbar-brand, .navbar-toggler-icon {
     color: white;
 }
 
 .nav-link:hover, .navbar-brand:hover {
-    color: grey;
+    color: black;
 }
 
 .jumbotron {
     background-color: #689093;
     color: white;
+}
+
+.title-heading {
+    padding: 30px;
+    border-top: 15px solid white;
+    border-bottom: 15px solid white;
+    background-color: #689093;
+    color: white;
+    text-align: center;
 }
 
 
