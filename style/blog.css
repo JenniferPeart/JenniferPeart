@@ -1,0 +1,18 @@
+.blog-post {
+    padding: 50px;
+}
+
+.blog-date {
+    font-weight: bold;
+}
+
+.card-title {
+    color: #689093;
+}
+
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
