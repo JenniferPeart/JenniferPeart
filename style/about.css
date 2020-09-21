@@ -5,8 +5,37 @@
 }
 
 .about-item {
-    min-width: 400px;
     margin: 10px;
     padding: 0 10px;
-    border: 3px solid grey;
 }
+
+.about-photo {
+    max-height: 60vh;
+    max-width: 100%;
+}
+
+.about-item-photo {
+    padding: 0;
+}
+
+.about-item-photo {order: 2;}
+.about-item-me {order: 1;}
+.about-item-how {order: 3;}
+
+.about-item-experience {
+    display: none;
+    order: 4;
+}
+
+@media screen and (min-width: 760px) {
+    .about-container {
+        display: block;
+    }
+
+    .about-item-photo {
+        float:left;
+        margin: 20px;
+    }
+  
+}
+

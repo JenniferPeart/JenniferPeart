@@ -23,7 +23,7 @@ OLD COLOURS
 CURRENT COLOURS USING
 pink: #ebaf9d
 blue: #5c7385
-grey: grey
+yellow: #ecb939
  
 */
 
@@ -52,7 +52,7 @@ grey: grey
 .sub-heading {
     padding: 10px;
     border-bottom: 15px solid white;
-    color: grey;
+    color: #ecb939;
     text-align: center;
 }
 
