@@ -1,26 +1,39 @@
 body {
-    background: #ca907e url(../media/skydivewide.jpg) no-repeat right center;
+    background: #ca907e url(../media/flowerbackground1.jpg) no-repeat right top;
     background-size: cover;
 }
 
-h1, h2 {
-    text-align: center;
+.home-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    height: 80vh;
+    
 }
 
-@media (min-width: 921px) {
-    h1 {
-        font-size: 6em;
+.home-photo {
+    margin: 20px;
+    border-radius: 50%;
+    border: 3px solid white;
+    max-width: 30vw;
+}
+
+.home-name {
+    width: fit-content;
+    padding: 30px;
+    margin: 20px; 
+    text-align: center;
+    color: white;
+    background-color: #5c7385;
+
+}
+
+@media (max-width: 700px) {
+    .home-photo {
+        max-width: 50vw;
     }
 }
 
-.name {
-    margin: auto;
-    margin-left: 30px;
-    width: 65vw;
-    height: 70vh;
-    align-self: start;
-    display: flex;
-    flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
