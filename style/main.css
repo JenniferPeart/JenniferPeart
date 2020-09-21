@@ -22,7 +22,7 @@ OLD COLOURS
 
 CURRENT COLOURS USING
 pink: #ebaf9d
-blue: #8fb2b4
+blue: #5c7385
 grey: grey
  
 */
@@ -40,16 +40,11 @@ grey: grey
     color: black;
 }
 
-.jumbotron {
-    background-color: #8fb2b4;
-    color: white;
-}
-
 .title-heading {
     padding: 30px;
     border-top: 15px solid white;
     border-bottom: 15px solid white;
-    background-color: #8fb2b4;
+    background-color: #5c7385;
     color: white;
     text-align: center;
 }
@@ -57,8 +52,7 @@ grey: grey
 .sub-heading {
     padding: 10px;
     border-bottom: 15px solid white;
-    background-color: grey;
-    color: white;
+    color: grey;
     text-align: center;
 }
 
