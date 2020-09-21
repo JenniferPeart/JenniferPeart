@@ -21,13 +21,14 @@ OLD COLOURS
 #5c7385 - dark blue
 
 CURRENT COLOURS USING
-light rose: #ca907e
-duck egg blue: #689093
+pink: #ebaf9d
+blue: #8fb2b4
+grey: grey
  
 */
 
 .navbar {
-    background-color: #ca907e;
+    background-color: #ebaf9d;
 }
 
 .nav-link, .navbar-brand, .navbar-toggler-icon {
@@ -40,7 +41,7 @@ duck egg blue: #689093
 }
 
 .jumbotron {
-    background-color: #689093;
+    background-color: #8fb2b4;
     color: white;
 }
 
@@ -48,7 +49,15 @@ duck egg blue: #689093
     padding: 30px;
     border-top: 15px solid white;
     border-bottom: 15px solid white;
-    background-color: #689093;
+    background-color: #8fb2b4;
+    color: white;
+    text-align: center;
+}
+
+.sub-heading {
+    padding: 10px;
+    border-bottom: 15px solid white;
+    background-color: grey;
     color: white;
     text-align: center;
 }
