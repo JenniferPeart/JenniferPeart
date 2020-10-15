@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Projects</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="style/main.css">
+  <link rel="stylesheet" type="text/css" href="style/projects.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm justify-content-between">
+    <a class="navbar-brand" href="index.html">Jennifer Peart</a>
+
+    <ul class="navbar-nav">
+      <li class="nav-item px-4">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item px-4">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item px-4">
+        <a class="nav-link" href="projects.html">Projects</a>
+      </li>
+      <li class="nav-item px-4">
+        <a class="nav-link" href="blog.html">Blog</a>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="title-heading">
+    <h1>Shakespeare or George R. R. Martin?</h1>
+  </section>
+
+  <section class="main-content">
+    <h2 class="sub-heading-left">Machine Learning Project</h2>
+
+    <p class="keywords">
+      Python - Flask - Machine Learning - Classification - SQL
+    </p>
+
+    <p>
+      During my Manipulating and Exploiting Data class I was assigned a classification project.
+      The brief was to develop a machine learning solution that reads text data, vectorizes it,
+       applies predictions in a binary classification setting, and renders these predictions
+        to the user. I was provided with a skeleton of a web application that uses the
+        flask Python microframework. I decided to design my app to learn to classify whether a 
+        quote inputted by the user was written by Shakespeare or George R. R. Martin. The user
+         is able to offer feedback as to whether the classification is correct and the results will 
+         be stored in a database. The web app is also capable of pulling data from the database, 
+         calculating evaluation metrics and updating the model.
+    </p>
+
+    <!-- This tabs section was adapted from code from https://www.w3schools.com/howto/howto_js_tabs.asp --> 
+    
+   <!-- Tab links -->
+   <div class="tab">
+    <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Website')">Website</button>
+    <button class="tablinks" onclick="openTab(event, 'Database')">Database</button>
+    <button class="tablinks" onclick="openTab(event, 'Vectorization')">Vectorization</button>
+    <button class="tablinks" onclick="openTab(event, 'Model')">Model</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="Website" class="tabcontent">
+    <p>The web app uses the Flask micro framework to render the HTML pages and display 
+      data pulled from the database and input taken from the user. It has a simple and 
+      clean style, kept consistent across the site using CSS. The web app is made up of 
+      five pages. The first three guide the user through having their quote processed, 
+      and the other two allow the user to evaluate and update the model. 
+    </p>
+
+    <p>
+      The home page explains what the web app does and provides a text box for the user 
+      to enter a quote into. If they click the predict button, their quote is used to create 
+      a prediction and they are taken to the submitted page.
+    </p>
+    <img src="media/shakespeare/homepage.png" alt="The website homepage.">
+
+    <p>
+      The submitted page displays their input text with the prediction made by the model. The 
+      user then has the option to select if the prediction was correct or incorrect. If they 
+      choose to send feedback, they are taken onto the feedback received page.
+    </p>
+    <img src="media/shakespeare/submitted.png" alt="The submitted page.">
+
+    <p>
+      The feedback received page displays their quote and feedback, as well as the five prior 
+      predictions made by the model. They then have the option to go back to the home page.
+    </p>
+    <img src="media/shakespeare/received.png" alt="The feedback received page.">
+
+    <p>
+      The home page also includes buttons for evaluating and updating the model. If the user 
+      clicks evaluate model, the app evaluates the current model and displays the information.
+    </p>
+    <img  src="media/shakespeare/evaluated.png" alt="The model evaluation page.">
+
+    <p>
+      If the user clicks update model, the system adds new quotes to the data set and re-trains 
+      the model, then takes the user to the page below, which displays the quotes that were added 
+      to the data.
+    </p>
+    <img src="media/shakespeare/updated.png" alt="The model updated page.">
+
+    <p>
+      One issue was that if a user entered a URL that didn’t exist, they were presented with the 
+      standard error page, so instead added in an error handler to display the message below. 
+      Providing clear details about what has gone wrong and how to correct it makes the system 
+      much more user friendly.
+    </p>
+    <img src="media/shakespeare/errormessage.png" alt="The error message.">
+  </div>
+  
+  <div id="Database" class="tabcontent">
+    <p>
+      The project is connected to the MySQL database through a database class in the app.py Python 
+      file; the initialisation function has the host address, username and password, and database 
+      name in order to connect. The database holds one table that relates to the predictions made 
+      by the model. In order to be normal form, there is a primary so that each row is unique and 
+      each cell is single-value and contains one type of data. The table records the quote inputted 
+      by the user, the actual category, whether the prediction was correct or not and whether the 
+      quote has been added to the training data or not.
+    </p>
+    <img src="media/shakespeare/database.png" alt="The database table.">
+
+    <p>
+      The first function in the database class inserts information from the web app into the database. 
+      The received_feedback function takes the quote, feedback and prediction from the web page and 
+      works out what the actual category is based on this information. It then calls the insert quote 
+      function with the quote, category and feedback as parameters, adding the information the database.
+    </p>
+    <img src="media/shakespeare/database2.png" alt="The first database function.">
+    
+    <p>
+      The next database function selects the five most recent quotes added to the quotes table. The 
+      received_feedback function calls this and saves it under the list result, which is used as a 
+      variable to render to the web page.
+    </p>
+    <img src="media/shakespeare/database3.png" alt="The second database function.">
+
+    <p>
+      The final database function is used to call a procedure that returns from the database the 
+      quotes and their binary category that were predicted correctly and have not yet been added 
+      to the training data, as well as changing their ‘in_training_data’ status in the quotes table. 
+      The model_updated function calls the getNewTrainingData function to get the new quotes then 
+      adds them to the allQuotes and allLabels arrays. I chose to do this as a procedure with a 
+      view because of the various different steps, it was easier to keep in one place and it 
+      allowed me to keep the correct information to return, whilst also allowing me to change 
+      values in the database.
+    </p>
+    <img src="media/shakespeare/database4.png" alt="The procedure code.">
+    <img src="media/shakespeare/database5.png" alt="The final database function.">
+  </div>
+  
+  <div id="Vectorization" class="tabcontent">
+  </div>
+  
+  <div id="Model" class="tabcontent">
+  </div>
+
+  </section>
+
+  <script>
+    // This script was adapted from code from https://www.w3schools.com/howto/howto_js_tabs.asp
+
+    function openTab(ev, tabName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+  
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    ev.currentTarget.tabName += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+
+</body>
+</html>
