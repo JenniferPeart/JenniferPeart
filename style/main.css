@@ -27,6 +27,8 @@ yellow: #ecb939
  
 */
 
+/* ---------------- NAVIGATION --------------- */
+
 .navbar {
     background-color: #ebaf9d;
 }
@@ -39,6 +41,8 @@ yellow: #ecb939
 .nav-link:hover, .navbar-brand:hover {
     color: black;
 }
+
+/* ---------------- TEXT ------------------ */
 
 .title-heading {
     padding: 30px;
@@ -62,25 +66,40 @@ yellow: #ecb939
     color: #ecb939;
 }
 
-.main-content {
-    margin: 0 10%;
-}
-
 .keywords {
     color: #5c7385;
     font-weight: bold;
 }
 
-/* TABS - Shakespeare project */
+/* ---------------- IMAGES ----------------- */
 
-/* Style the tab */
+.image-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+}
+
+/* ---------------- OTHER ------------------ */
+
+.main-content {
+  margin: 0 10%;
+}
+
+@media screen and (max-width: 760px) {
+  .main-content {
+    margin: 0 10px;
+  }
+}
+
+/* ------------------------ TABS  ---------------------- */
+ /* used on shakespeare project */
+
 .tab {
     overflow: hidden;
-    background-color: #ebaf9d;
-    
+    background-color: #ecb939;  
   }
   
-  /* Style the buttons that are used to open the tab content */
   .tab button {
     background-color: inherit;
     color: white;
@@ -91,22 +110,27 @@ yellow: #ecb939
     padding: 14px 16px;
   }
   
-  /* Change background color of buttons on hover */
   .tab button:hover {
     color: black;
+    border: none;
+    outline: none;
   }
   
-  /* Create an active/current tablink class */
   .tab button.active {
-    color: black;
-    border: none;
+    background-color: white;
+    color: #ecb939;
+    border: 2px solid #ecb939;
+    border-bottom: none;
     outline: none;
   }
   
   /* Style the tab content */
   .tabcontent {
     display: none;
+    margin-bottom: 50px;
     padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: 2px solid #ecb939;
     border-top: none;
   }
+
+  /* --------------------------------------------------------------- */

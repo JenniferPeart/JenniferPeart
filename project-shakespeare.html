@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" type="text/css" href="style/main.css">
-  <link rel="stylesheet" type="text/css" href="style/projects.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
@@ -49,20 +48,25 @@
     </p>
 
     <p>
-      During my Manipulating and Exploiting Data class I was assigned a classification project.
-      The brief was to develop a machine learning solution that reads text data, vectorizes it,
-       applies predictions in a binary classification setting, and renders these predictions
-        to the user. I was provided with a skeleton of a web application that uses the
-        flask Python microframework. I decided to design my app to learn to classify whether a 
-        quote inputted by the user was written by Shakespeare or George R. R. Martin. The user
-         is able to offer feedback as to whether the classification is correct and the results will 
-         be stored in a database. The web app is also capable of pulling data from the database, 
-         calculating evaluation metrics and updating the model.
+      During my Manipulating and Exploiting Data class I was assigned a machine learning project.
+      The brief was to develop a program that reads text data, vectorizes it,
+      applies predictions in a binary classification setting, and renders these predictions
+      to the user. I was provided with a skeleton of a web application that uses the
+      flask Python micro framework.
+    </p>
+
+    <p>
+      I designed my web app to classify whether a quote inputted by the user was written by 
+      Shakespeare or George R. R. Martin. The user was able to offer feedback as to whether the 
+      classification was correct and the results were 
+      stored in a database. The web app was also capable of pulling data from the database, 
+      calculating evaluation metrics and updating the model. Below I have included some 
+      content from my essay that accompanied the project, which details what the app does and how
+      I went about creating it.
     </p>
 
     <!-- This tabs section was adapted from code from https://www.w3schools.com/howto/howto_js_tabs.asp --> 
-    
-   <!-- Tab links -->
+
    <div class="tab">
     <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Website')">Website</button>
     <button class="tablinks" onclick="openTab(event, 'Database')">Database</button>
@@ -70,8 +74,8 @@
     <button class="tablinks" onclick="openTab(event, 'Model')">Model</button>
   </div>
   
-  <!-- Tab content -->
   <div id="Website" class="tabcontent">
+
     <p>The web app uses the Flask micro framework to render the HTML pages and display 
       data pulled from the database and input taken from the user. It has a simple and 
       clean style, kept consistent across the site using CSS. The web app is made up of 
@@ -84,41 +88,51 @@
       to enter a quote into. If they click the predict button, their quote is used to create 
       a prediction and they are taken to the submitted page.
     </p>
-    <img src="media/shakespeare/homepage.png" alt="The website homepage.">
+    <img class="image-center" src="media/shakespeare/homepage.png" alt="The website homepage.">
 
     <p>
       The submitted page displays their input text with the prediction made by the model. The 
       user then has the option to select if the prediction was correct or incorrect. If they 
       choose to send feedback, they are taken onto the feedback received page.
     </p>
-    <img src="media/shakespeare/submitted.png" alt="The submitted page.">
+    <img class="image-center" src="media/shakespeare/submitted.png" alt="The submitted page.">
 
     <p>
       The feedback received page displays their quote and feedback, as well as the five prior 
       predictions made by the model. They then have the option to go back to the home page.
     </p>
-    <img src="media/shakespeare/received.png" alt="The feedback received page.">
+    <img class="image-center" src="media/shakespeare/received.png" alt="The feedback received page.">
 
     <p>
       The home page also includes buttons for evaluating and updating the model. If the user 
       clicks evaluate model, the app evaluates the current model and displays the information.
     </p>
-    <img  src="media/shakespeare/evaluated.png" alt="The model evaluation page.">
+    <img class="image-center"  src="media/shakespeare/evaluated.png" alt="The model evaluation page.">
 
     <p>
       If the user clicks update model, the system adds new quotes to the data set and re-trains 
-      the model, then takes the user to the page below, which displays the quotes that were added 
+      the model. It then takes the user to the page below, which displays the quotes that were added 
       to the data.
     </p>
-    <img src="media/shakespeare/updated.png" alt="The model updated page.">
+    <img class="image-center" src="media/shakespeare/updated.png" alt="The model updated page.">
 
     <p>
       One issue was that if a user entered a URL that didn’t exist, they were presented with the 
-      standard error page, so instead added in an error handler to display the message below. 
+      standard error page, so instead I added in an error handler to display the message below. 
       Providing clear details about what has gone wrong and how to correct it makes the system 
       much more user friendly.
     </p>
-    <img src="media/shakespeare/errormessage.png" alt="The error message.">
+    <img class="image-center" src="media/shakespeare/errormessage.png" alt="The error message.">
+    <p>
+      Some areas for improving user interaction could be to deal with other types of errors, such as 
+      not being able to connect to the database, or the input text being too long. Adding validation 
+      to the input text box to restrict length and to the radio buttons to ensure one is selected when 
+      the ‘send feedback’ button is clicked would stop the user accidentally disrupting the system. 
+      Handling as many errors and exceptions as possible means that the user has a better experience 
+      using the app. Another area for improvement could be the overall design; research into what 
+      makes a good user interface and implementing these ideas as well as perhaps adding in some 
+      graphics could take the web app to the next level.
+    </p>
   </div>
   
   <div id="Database" class="tabcontent">
@@ -126,12 +140,12 @@
       The project is connected to the MySQL database through a database class in the app.py Python 
       file; the initialisation function has the host address, username and password, and database 
       name in order to connect. The database holds one table that relates to the predictions made 
-      by the model. In order to be normal form, there is a primary so that each row is unique and 
+      by the model. In order to be normal form, there is a primary ID so that each row is unique and 
       each cell is single-value and contains one type of data. The table records the quote inputted 
       by the user, the actual category, whether the prediction was correct or not and whether the 
       quote has been added to the training data or not.
     </p>
-    <img src="media/shakespeare/database.png" alt="The database table.">
+    <img class="image-center" src="media/shakespeare/database.png" alt="The database table.">
 
     <p>
       The first function in the database class inserts information from the web app into the database. 
@@ -139,36 +153,92 @@
       works out what the actual category is based on this information. It then calls the insert quote 
       function with the quote, category and feedback as parameters, adding the information the database.
     </p>
-    <img src="media/shakespeare/database2.png" alt="The first database function.">
+    <img class="image-center" src="media/shakespeare/database2.png" alt="The first database function.">
     
     <p>
       The next database function selects the five most recent quotes added to the quotes table. The 
       received_feedback function calls this and saves it under the list result, which is used as a 
       variable to render to the web page.
     </p>
-    <img src="media/shakespeare/database3.png" alt="The second database function.">
+    <img class="image-center" src="media/shakespeare/database3.png" alt="The second database function.">
 
     <p>
       The final database function is used to call a procedure that returns from the database the 
-      quotes and their binary category that were predicted correctly and have not yet been added 
+      quotes, and their binary category, that were predicted correctly and have not yet been added 
       to the training data, as well as changing their ‘in_training_data’ status in the quotes table. 
-      The model_updated function calls the getNewTrainingData function to get the new quotes then 
+      The model_updated function calls the getNewTrainingData function to get the new quotes, then 
       adds them to the allQuotes and allLabels arrays. I chose to do this as a procedure with a 
       view because of the various different steps, it was easier to keep in one place and it 
       allowed me to keep the correct information to return, whilst also allowing me to change 
       values in the database.
     </p>
-    <img src="media/shakespeare/database4.png" alt="The procedure code.">
-    <img src="media/shakespeare/database5.png" alt="The final database function.">
+    <img class="image-center" src="media/shakespeare/database4.png" alt="The procedure code.">
+    <img class="image-center" src="media/shakespeare/database5.png" alt="The final database function.">
   </div>
   
   <div id="Vectorization" class="tabcontent">
+    <p>
+      The web app uses a bag of words model, where the feature words are extracted from the data set 
+      and are used to evaluate which are most associated with each class. I chose to use the 
+      TfidfVectorizer rather than CountVectorizor because it gives lower importance to words that 
+      appear regularly in both categories and gives higher importance to words that are unique to a 
+      category (Brownlee, J. [2017]  
+      <a href="https://machinelearningmastery.com/gentle-introduction-bag-words-model/" target="_blank">
+      A Gentle Introduction to the Bag-of-Words Model</a>). I also chose to extract 100 feature words; 
+      when there was a higher amount, the model ended 
+      up being less accurate, whilst a lower amount didn’t change the accuracy. Each quote will then 
+      be represented by a vector with a length of 100, each value being a zero or a one, depending on 
+      whether the quote contains the feature word or not.
+    </p>
+
+    <p>
+      The original data for training the model consists of a text file for each of the two categories 
+      (Shakespeare and Martin), that contain quotes from each of the authors work. There was a lot more 
+      quotes for Shakespeare than Martin; when I vectorized the data and extracted the features, the 
+      following model had a very low accuracy. I combated this by cutting down the Shakespeare quotes 
+      used to the same amount as Martin quotes. This time when I vectorized the data, and trained the 
+      model, it had a much higher accuracy.
+    </p>
+
+    <p>
+      I added in a way to save a list of the feature words and then use them in the vectorize_text 
+      function, as the input text needs to be vectorized the same way as the model data. Whenever the 
+      model is updated and the data re-vectorized, the features list is also updated so that it is 
+      always the same features as used in the model being used to predict the outcome.
+    </p>
+    <img class="image-center" src="media/shakespeare/vectorization.png" alt="The vectorize text function.">
   </div>
   
   <div id="Model" class="tabcontent">
-  </div>
+    <p>
+      To train the model, I again chose to use the same amount of data for each category type as 
+      this seemed to give the highest accuracy. I tried out several classifier models, evaluating 
+      them to compare results and see which would be best for the data I had.
+    </p>
+    <img class="image-center" src="media/shakespeare/model.png" alt="Analysis.">
+    <img class="image-center" src="media/shakespeare/model2.png" alt="Analysis.">
+    <p>
+      The Random Forest Classifier gave the best results, so I went with that one for the web app 
+      model.
+    </p>
 
-  </section>
+    <p>
+      Below is the evaluation metrics of the model. It has a fairly high accuracy and is relatively 
+      good for either category, although it is slightly better at predicting true negatives (true 
+      Shakespeares) than true positives (true Martins).
+    </p>
+    <img class="image-center" src="media/shakespeare/modelevaluation.png" alt="Evaluation results.">
+
+    <p>
+      The web app is designed to update the data used to get the set of features and then the model 
+      is retrained. One issue is that since updating the model, the accuracy has dropped dramatically. 
+      The way the system is designed means a maintainer could just rerun the original data and model 
+      to get the higher accuracy back. A possible improvement tha could be implemented in a future update 
+      would be to stop the model updating if it means the accuracy will be lower than the original.
+    </p>
+
+  </div>
+</section>
 
   <script>
     // This script was adapted from code from https://www.w3schools.com/howto/howto_js_tabs.asp
@@ -191,7 +261,7 @@
   
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
-    ev.currentTarget.tabName += " active";
+    ev.currentTarget.className += " active";
   }
 
   // Get the element with id="defaultOpen" and click on it
